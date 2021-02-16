@@ -1,4 +1,5 @@
 <?php
+include_once "Constants.php";
 
 class Audio {
 
@@ -8,14 +9,14 @@ class Audio {
         $this->path = $path;
     }
 
-    public function getAudio($path) {
-        $audiolist = "";
+    public function getAudio() {
+        $audio = "";
 
-        $audiolist .= '<audio controls>'.PHP_EOL;
-        $audiolist .= '<source src="'.$path.'" type="audio/mpeg">'.PHP_EOL;
-        $audiolist .= '</audio>'.PHP_EOL;
+        $audio .= '<audio controls>'.PHP_EOL;
+        $audio .= '<source src="'.Constants::PATH_AUDIOS.$this->path.'" type="audio/mpeg">'.PHP_EOL;
+        $audio .= '</audio>'.PHP_EOL;
 
-        return $audiolist;
+        return $audio;
     }
 }
 

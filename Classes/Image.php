@@ -1,4 +1,5 @@
 <?php
+include_once "Constants.php";
 
 class Image {
     private $path = "";
@@ -7,12 +8,12 @@ class Image {
         $this->path = $path;
     }
     
-    public function getImage($path) {
-        $imageList = "";
+    public function getImage() {
+        $image = "";
 
-        $imageList .= '<img src="'.$path.'" alt="img">'.PHP_EOL;
+        $image .= '<img src="'.Constants::PATH_IMAGES.$this->path.'" alt="img"/>'.PHP_EOL;
 
-        return $imageList;
+        return $image;
     }
 }
 

@@ -1,4 +1,5 @@
 <?php
+include_once "Constants.php";
 
 class Video {
     
@@ -8,14 +9,17 @@ class Video {
         $this->path = $path;
     }
     
-    public function getVideo($path) {
-        $videoList = '';
+    public function getVideo() {
+        $video = '';
     
-        $videoList .= '<video width="320" height="240" controls>'.PHP_EOL;
-        $videoList .= '<source src="'.$path.'" type="video/mp4">'.PHP_EOL;
-        $videoList .= '</video>'.PHP_EOL;
+        $video .= '<video width="320" height="240" controls>'.PHP_EOL;
+        $video .= '<source src="'.Constants::PATH_VIDEOS.$this->path.'" type="video/webm">'.PHP_EOL;
+        $video .= '<source src="'.Constants::PATH_VIDEOS.$this->path.'" type="video/ogg">'.PHP_EOL;
+        $video .= '<source src="'.Constants::PATH_VIDEOS.$this->path.'" type="video/mp4">'.PHP_EOL;
+        $video .= '<source src="'.Constants::PATH_VIDEOS.$this->path.'" type="video/3gp">'.PHP_EOL;
+        $video .= '</video>'.PHP_EOL;
 
-        return $videoList;
+        return $video;
     }
 }
 
